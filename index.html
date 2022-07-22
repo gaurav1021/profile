@@ -19,7 +19,8 @@
                     }
                     #eCont{
                               padding:10px;
-                              background-color: black;
+                              width: 100vw;
+                              background-color: #2C3333;
                               display: flex;
                               justify-content: center;
 
@@ -108,6 +109,18 @@
     </div>
     </div>
           <script>
+                    window.onscroll = function() {myFunction()};
+                    
+                    var navbar = document.getElementById("eCont");
+                    var sticky = navbar.offsetTop;
+                    
+                    function myFunction() {
+                      if (window.pageYOffset >= sticky) {
+                        navbar.classList.add("sticky")
+                      } else {
+                        navbar.classList.remove("sticky");
+                      }
+                    }
                     function showCoords(event){
                               var X=event.clientX;
                               var Y=event.clientY;
