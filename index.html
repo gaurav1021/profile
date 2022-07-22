@@ -12,9 +12,51 @@
     <title>Gaurav Mangal</title>
     <link rel="icon" href="myicon.ico">
     <link rel="stylesheet" href="styles.css">
+          <style>
+                    *{
+                              margin: 0;
+                              padding: 0;
+                    }
+                    #eCont{
+                              padding:10px;
+                              background-color: black;
+                              display: flex;
+                              justify-content: center;
+
+                    }
+                    #eye{
+                              display: flex;
+                              justify-content: center;
+                              border-radius: 50%;
+                              background-color:white;
+                              width:20px;
+                              height:20px;
+                    }
+                    #eye:hover{
+                              background-color: #dd1155;
+                    }
+                    #pupil{
+                              background-color: black;
+                              border-radius: 50%;
+                              width:10px;
+                              height:10px;
+                    }
+                    #pupil:hover{
+                              width: 12px;
+                              height: 12px;
+                    }
+          </style>
+
 </head>
 
 <body>
+     <div id="app" onmousemove="showCoords(event)">
+                <div id="eCont">
+                    <div id="eye" onclick=" reload()">
+                                    <div id="pupil">
+                                    </div>
+                          </div>
+          </div>
     <div id="topp">
         <div>
             <img src="images/cloud.png" id="topc" alt="top-cloud">
@@ -64,7 +106,19 @@
         <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
         <p class="copyright">© Gaurav Mangal.</p>
     </div>
-
+    </div>
+          <script>
+                    function showCoords(event){
+                              var X=event.clientX;
+                              var Y=event.clientY;
+                              X=((event.clientX-680)/68);
+                              Y=((event.clientY-30)/30)-5;
+                              document.getElementById('pupil').style.transform=`translate(${X}px,${Y}px)`;
+                    }
+                    function reload(){
+                              location.reload();
+                    }
+          </script>
 </body>
 
 </html>
