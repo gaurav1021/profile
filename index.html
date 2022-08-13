@@ -1,142 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+.top-container {
+    margin: 0;
+    /* width: 30vh; */
+    margin: 0 auto;
+    /* text-align: center; */
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Sacramento&display=swap" rel="stylesheet">
-    <title>Gaurav Mangal</title>
-    <link rel="icon" href="myicon.ico">
-    <link rel="stylesheet" href="styles.css">
-          <style>
-                    *{
-                              margin: 0;
-                              padding: 0;
-                    }
-                    #eCont{
-                              position: fixed;
-                              top: 0;
-                              padding:10px;
-                              width: 100vw;
-                              background-color: black;
-                              display: flex;
-                              justify-content: center;
+h1 {
+    margin: 50px 0px -30px 0px;
+    font-size: 100%;
+}
 
-                    }
-                    #eye{
-                              display: flex;
-                              justify-content: center;
-                              border-radius: 50%;
-                              background-color:white;
-                              width:20px;
-                              height:20px;
-                    }
-                    #eye:hover{
-                              background-color: #dd1155;
-                    }
-                    #pupil{
-                              background-color: black;
-                              border-radius: 50%;
-                              width:10px;
-                              height:10px;
-                    }
-                    #pupil:hover{
-                              width: 12px;
-                              height: 12px;
-                    }
-                    #app{
-                        overflow:hidden;
-                    }
-          </style>
+#im {
+    font-family: 'Sacramento', 'cursive';
+    font-size: 90px;
+}
 
-</head>
+span {
+    text-decoration: underline;
+}
 
-<body>
-     <div id="app" onmousemove="showCoords(event)">
-                <div id="eCont">
-                    <div id="eye" onclick=" reload()">
-                                    <div id="pupil">
-                                    </div>
-                          </div>
-          </div>
-    <div id="topp">
-        <div>
-            <img src="images/cloud.png" id="topc" alt="top-cloud">
-        </div>
-        <div class="top-container">
-            <h1 id="im" class="headin">I'm Gaurav</h1>
-            <h2 id="aprog" class="headin">a <span>pro</span>grammer.</h2>
-        </div>
-        <div>
-            <img src="images/cloud.png" id="bottomc" alt="bottom-cloud">
-            <img src="images/mountain.png" id="mount" alt="mountain">
-        </div>
-    </div>
-    <div class="middle-container">
-        <div class="profile">
-            <img class="imag" src="images/my_pic.png" id="profile" alt="profile_pic">
-            <h2>Hello.</h2>
-            <p class="intro">I am currently a student at Bharati Vidyapeeth's College Of Engineering. I posses the skills of Web Development and am quiet confident on my application of Data Structre and Algorithms.</p>
-        </div>
-        <hr>
-        <div class="skills">
-            <h2>My Skills.</h2>
-            <div class="skill-row">
-                <img class="imag webd" id="" src="images/webd.webp" alt="skills.png">
-                <h3>WEB DELVELOPMENT</h3>
-                <p>A Full stack Web Developer, I am very curious about various color schemes and the emotion they make you feel. So, I love designing Websites.</p>
-            </div>
-            <div class="skill-row">
-                <img class="imag dsa" id="" src="images/skills2.png" alt="skills2.png">
-                <h3>DSA</h3>
-                <p>Equipped with basic and advanced datastructres knowledge and application.</p>
-            </div>
-        </div>
-        <hr>
-        <div class="contact-me">
-            <h2>Get In Touch</h2>
-            <h3 class="cmesge">I am currently availabe for freelancing!</h3>
-            <p class="cmesge">If you also love coffee, coding and marvel, what are you waiting for? let's connect!</p>
-            <a href="mailto:gauravmangal389@gmail.com" class="btn">CONTACT ME</a>
-        </div>
-    </div>
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    color: #40514E;
+}
+
+#topc {
+    display: relative;
+    margin: 50px 85vw 15px 15vw;
+}
+
+#bottomc {
+    display: relative;
+    margin: 0 33vw -50px 77vw;
+}
+
+#topp {
+    background-color: #e4f9f5;
+}
 
 
-    <div class="bottom-container">
-        <a class="footer-link" href="https://www.linkedin.com/in/gaurav-mangal-0141981a8/">LinkedIn</a>
-        <a class="footer-link" href="https://twitter.com/GauravM65946722">Twitter</a>
-        <a class="footer-link" href="https://github.com/gaurav1021">Website</a>
-        <p class="copyright">© Gaurav Mangal.</p>
-    </div>
-    </div>
-          <script>
-                    window.onscroll = function() {myFunction()};
-                    
-                    var navbar = document.getElementById("eCont");
-                    var sticky = navbar.offsetTop;
-                    
-                    function myFunction() {
-                      if (window.pageYOffset >= sticky) {
-                        navbar.classList.add("sticky")
-                      } else {
-                        navbar.classList.remove("sticky");
-                      }
-                    }
-                    function showCoords(event){
-                              var X=event.clientX;
-                              var Y=event.clientY;
-                              X=((event.clientX-680)/68);
-                              Y=((event.clientY-30)/30)-5;
-                              document.getElementById('pupil').style.transform=`translate(${X}px,${Y}px)`;
-                    }
-                    function reload(){
-                              location.reload();
-                    }
-          </script>
-</body>
 
-</html>
+.webd {
+    float: left;
+    margin-right: 30px;
+}
+
+.dsa {
+    float: right;
+    margin-left: 30px;
+}
+
+#aprog {
+    font-size: 2.5rem;
+}
+
+.headin {
+    color: #66BFBF;
+}
+
+h3,
+a {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-weight: normal;
+    color: #66BFBF;
+}
+
+
+#mount {
+    margin-top: -100px;
+}
+
+.bottom-container {
+    background-color: #66BFBF;
+    padding: 50px 0 20px;
+}
+
+.footer-link {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+}
+
+.middle-container {
+    margin: 100px 0 100px 0;
+}
+
+
+p {
+    line-height: 2;
+}
+
+
+.btn {
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #30e3cb;
+    background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eaf6f6
+}
+
+.copyright {
+    color: #eaf6f6;
+    font-size: 0.75rem;
+    padding: 20px 0;
+}
+.skill-row {
+    margin: 100px auto 100px auto;
+    width: 50%;
+    text-align: left;
+}
+.intro {
+    width: 40%;
+    margin: auto;
+}
+hr {
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+}
+
+.cmesge {
+    width: 30%;
+    margin: 100px auto 60px;
+}
+#profile {
+    width: 14%;
+    height:14%;
+    overflow: hidden;
+}
+
+    .imag {
+        width: 150px;
+        height:150px;
+    } 
+
+
+
+
+
+
+
+
+@media screen and (max-width:550px){
+    #profile {
+        width: 25%;
+        height: 25%;
+    }
+    .skill-row {
+        width: 80%;
+    }
+    .intro {
+        width: 80%;
+    }
+    .cmesge {
+        width: 80%;
+    }
+
+}
+@media (min-width:550px) and (max-width:768px){
+    #profile {
+        width: 20%;
+        height: 20%;
+    }
+    .skill-row {
+        width: 80%;
+    }
+    .intro {
+        width: 80%;
+    }
+    .cmesge {
+        width: 80%;
+    }
+
+}
