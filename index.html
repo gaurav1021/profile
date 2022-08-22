@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +12,45 @@
     <title>Gaurav Mangal</title>
     <link rel="icon" href="myicon.ico">
     <link rel="stylesheet" href="styles.css">
-          <style>.top-container {
+          <style>
+                    *{
+                              margin: 0;
+                              padding: 0;
+                    }
+                    #eCont{
+                              position: fixed;
+                              top: 0;
+                              padding:10px;
+                              width: 100vw;
+                              background-color: black;
+                              display: flex;
+                              justify-content: center;
+
+                    }
+                    #eye{
+                              display: flex;
+                              justify-content: center;
+                              border-radius: 50%;
+                              background-color:white;
+                              width:20px;
+                              height:20px;
+                    }
+                    #eye:hover{
+                              background-color: #dd1155;
+                    }
+                    #pupil{
+                              background-color: black;
+                              border-radius: 50%;
+                              width:10px;
+                              height:10px;
+                    }
+                    #pupil:hover{
+                              width: 12px;
+                              height: 12px;
+                    }
+                    #app{
+                        overflow:hidden;
+                    }.top-container {
     margin: 0;
     /* width: 30vh; */
     margin: 0 auto;
@@ -212,10 +249,14 @@ hr {
     .skill-row {
         width: 80%;
     }
+    .intro {
+        width: 80%;
+    }
+    .cmesge {
+        width: 80%;
+    }
 
-
-
-
+}
           </style>
 
 </head>
@@ -295,7 +336,10 @@ hr {
                               var X=event.clientX;
                               var Y=event.clientY;
                               X=((event.clientX-680)/68);
-                              Y=((event.clientY-30)/30)-5;
+                              Y=Math.abs(((event.clientY-30)/30)-5);
+                              while(Y>15){
+                                Y=Y-5;
+                              }
                               document.getElementById('pupil').style.transform=`translate(${X}px,${Y}px)`;
                     }
                     function reload(){
@@ -305,7 +349,3 @@ hr {
 </body>
 
 </html>
-
-
-
-
